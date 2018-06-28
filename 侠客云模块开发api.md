@@ -75,6 +75,9 @@ millisecond| int | 冷却时间，单位是毫秒
 ```javascript
 await xky.sleep(1000);//冷却1秒
 ```
+```
+{errcode: 0, msg: "冷却完毕"}
+```
 >此命令必须加await 否则就没什么作用了，会一跳而过
 
 #### 在控制台打印日志
@@ -87,6 +90,9 @@ log| object | 日志内容，可以是任意对象
 ```javascript
 await xky.log('我是日志');
 ```
+```
+{errcode: 0, msg: "日志发送完毕"}
+```
 
 #### 点击某个位置
 `xky.click(x,y)`
@@ -97,6 +103,9 @@ x| double | x坐标
 y| double | y坐标
 ```javascript
 await xky.click(0.5,0.5);//点击屏幕中间位置
+```
+```
+{msg: "点击完毕", errcode: 0}
 ```
 >x y均为百分比取值范围是0-1，可配合xiakeuispy工具获取坐标点
 
@@ -110,6 +119,9 @@ y| double | y坐标
 ```javascript
 await xky.mousedown(0.5,0.5);//按下屏幕中间位置
 ```
+```
+{msg: "鼠标按下", errcode: 0}
+```
 >x y均为百分比取值范围是0-1，可配合xiakeuispy工具获取坐标点
 
 #### 释放某个位置(先执行mousedown)
@@ -122,6 +134,9 @@ y| double | y坐标
 ```javascript
 await xky.mouseup(0.5,0.5);//从这个位置释放屏幕中间位置
 ```
+```
+{msg: "鼠标释放", errcode: 0}
+```
 >x y均为百分比取值范围是0-1，可配合xiakeuispy工具获取坐标点
 
 #### 移动某个位置(先执行mousedown)
@@ -133,6 +148,9 @@ x| double | x坐标
 y| double | y坐标
 ```javascript
 await xky.mousedrag(0.5,0.5);//移动到这个位置
+```
+```
+{msg: "鼠标移动", errcode: 0}
 ```
 >x y均为百分比取值范围是0-1，可配合xiakeuispy工具获取坐标点
 
@@ -148,6 +166,9 @@ leftright| int |水平滚动量 可选，默认值0
 ```javascript
 await xky.wheel(0.5,0.5,-2);//往下滚动-2个位置
 ```
+```
+{msg: "鼠标滚动", errcode: 0}
+```
 >x y均为百分比取值范围是0-1，可配合xiakeuispy工具获取坐标点
 
 #### 按下某个按键
@@ -159,15 +180,8 @@ key| int | 按键代码 [安卓按键代码参考](https://github.com/XKSoft/doc
 ```javascript
 await xky.pressKey(3);//按下home键
 ```
-
-#### 按下某个按键
-`xky.pressKey(key)`
-
-参数 | 值类型 | 说明
------------- | ------------- | -------------
-key| int | 按键代码 [安卓按键代码参考](https://github.com/XKSoft/doc/blob/master/%E5%AE%89%E5%8D%93%E6%8C%89%E9%94%AE%E5%AF%B9%E5%BA%94keycode.md)
-```javascript
-await xky.pressKey(3);//按下home键
+```
+{msg: "按键操作成功", errcode: 0}
 ```
 
 
@@ -180,6 +194,9 @@ value| string| 要设置的剪贴板内容
 ```javascript
 await xky.setClipboardText('asdf');//把剪贴板内容设置为asdf
 ```
+```
+{msg: "剪贴板赋值完成", errcode: 0}
+```
 
 #### 读取剪贴板内容
 `xky.getClipboardText()`
@@ -188,12 +205,18 @@ await xky.setClipboardText('asdf');//把剪贴板内容设置为asdf
 ```javascript
 let cb=await xky.getClipboardText();
 ```
+```
+{msg: "剪贴板读值完成", errcode: 0, value: "3"}
+```
 
 #### 复制 将选定内容复制到剪贴板
 `xky.copy()`
 
 ```javascript
 await xky.copy();
+```
+```
+{msg: "按键操作成功", errcode: 0}
 ```
 >类似pc上的ctrl+c
 
@@ -203,6 +226,9 @@ await xky.copy();
 ```javascript
 await xky.cut();
 ```
+```
+{msg: "按键操作成功", errcode: 0}
+```
 >类似pc上的ctrl+x
 
 #### 粘贴 剪贴板中的内容粘贴出来
@@ -210,6 +236,9 @@ await xky.cut();
 
 ```javascript
 await xky.paste();
+```
+```
+{msg: "按键操作成功", errcode: 0}
 ```
 >类似pc上的ctrl+v
 
@@ -227,6 +256,9 @@ await xky.findAndClick('微信');//查找文字为 微信 的控件 并点击
 await xky.findAndClick('微',true);//正则方式查找，这里是所有包含 微 的控件 并点击
 await xky.findAndClick('微信',false,1);//查找文字为 微信 的控件 并点击，并点击第2个控件（计算机数数从0开始）
 ```
+```
+{msg: "点击成功", errcode: 0}
+```
 >控件元素id可配合xiakeyunuispy工具获取
 
 #### 查找并输入文本
@@ -241,6 +273,9 @@ index| int | 可选 默认值0 点击找到的第几个元素
 ```javascript
 await xky.findAndInput('com.android.messaging:id/recipient_text_view','hahaha');//查找控件并输入 hahahah
 ```
+```
+{msg: "赋值成功", errcode: 0}
+```
 >控件元素id可配合xiakeyunuispy工具获取
 
 #### 重新启动APP(如果没启动则新启)
@@ -252,6 +287,9 @@ pkname| string| app包名
 ```javascript
 await xky.restartApp('com.tencent.mm');//启动微信
 ```
+```
+{msg: "指令完成", errcode: 0}
+```
 
 #### 杀死APP
 `xky.killApp(pkname)`
@@ -262,6 +300,9 @@ pkname| string| app包名
 ```javascript
 await xky.killApp('com.tencent.mm');//杀死微信
 ```
+```
+{errcode: 0, result: ""}
+```
 
 #### 清空APP所有数据
 `xky.clearApp(pkname)`
@@ -271,6 +312,9 @@ await xky.killApp('com.tencent.mm');//杀死微信
 pkname| string| app包名
 ```javascript
 await xky.clearApp('com.tencent.mm');//清空微信所有数据
+```
+```
+{errcode: 0, result: ""}
 ```
 >慎重，这样就相当于重装了这个app了，所有数据都清空哦
 
