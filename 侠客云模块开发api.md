@@ -52,6 +52,9 @@ style| int | 提示风格_可选项（可选1 2 3 4 5 6 ）
 await xky.toast('我是提示');
 await xky.toast('我是提示',1);
 ```
+```
+{msg: "toast by http", errcode: 0}
+```
 
 #### 冷却休眠
 `xky.sleep(millisecond)`
