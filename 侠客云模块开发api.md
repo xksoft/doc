@@ -134,6 +134,17 @@ await xky.wheel(0.5,0.5,-2);//往下滚动-2个位置
 ```
 >x y均为百分比取值范围是0-1，可配合xiakeuispy工具获取坐标点
 
+#### 按下某个按键
+`xky.pressKey(key)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+key| int | 按键代码 [安卓按键代码参考](https://github.com/XKSoft/doc/blob/master/%E5%AE%89%E5%8D%93%E6%8C%89%E9%94%AE%E5%AF%B9%E5%BA%94keycode.md)
+```javascript
+await xky.pressKey(3);//按下home键
+```
+
+
 #### 查找元素
 `xky.findUiObjects(name, regex)`
 
