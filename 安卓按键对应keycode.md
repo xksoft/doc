@@ -1,11 +1,9 @@
-
-
 按键代码 | 说明 
 ------------ | ------------- 
-1 ||ESCAPE
-2  ||1
+1|ESCAPE
+2|1
 3|2
-4  ||3
+4|3
 5| 4
 6| 5
 7| 6
@@ -85,7 +83,7 @@
 81|NUMPAD_3
 82|NUMPAD_0
 83|NUMPAD_DOT
-84 (undefined)
+84|(undefined)
 85|ZENKAKU_HANKAKU
 86|BACKSLASH
 87|F11
