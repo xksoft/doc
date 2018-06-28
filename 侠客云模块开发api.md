@@ -35,19 +35,8 @@ command| string | adb指令
 await xky.adbCommand('shell ls');
 ```
 
-```json
-{errcode: 0, result: "acct
-↵bugreports
-↵cache
-↵charger
-↵config
-↵d
-↵data
-…
-↵ueventd.shamu.rc
-↵vendor
-↵vndservice_contexts
-↵"}
+```
+{errcode: 0, result: "结果"}
 ```
 
 #### toast提示信息
