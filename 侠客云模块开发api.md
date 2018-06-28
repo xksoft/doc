@@ -144,19 +144,59 @@ key| int | 按键代码 [安卓按键代码参考](https://github.com/XKSoft/doc
 await xky.pressKey(3);//按下home键
 ```
 
-
-#### 查找元素
-`xky.findUiObjects(name, regex)`
+#### 按下某个按键
+`xky.pressKey(key)`
 
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
-name| string| 查找条件，可以是字符串或者正则表达式
-regex| bool| 可选 默认值 false 是否是正则表达式
+key| int | 按键代码 [安卓按键代码参考](https://github.com/XKSoft/doc/blob/master/%E5%AE%89%E5%8D%93%E6%8C%89%E9%94%AE%E5%AF%B9%E5%BA%94keycode.md)
 ```javascript
-await xky.findUiObjects('微信');//查找文字为 微信 的控件
-await xky.findUiObjects('微',true);//正则方式查找，这里是所有包含 微 的控件
+await xky.pressKey(3);//按下home键
 ```
->控件元素id可配合xiakeyunuispy工具获取
+
+
+#### 设置剪贴板内容
+`xky.setClipboardText(value)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+value| string| 要设置的剪贴板内容
+```javascript
+await xky.setClipboardText('asdf');//把剪贴板内容设置为asdf
+```
+
+#### 读取剪贴板内容
+`xky.getClipboardText()`
+
+
+```javascript
+let cb=await xky.getClipboardText();
+```
+
+#### 复制 将选定内容复制到剪贴板
+`xky.copy()`
+
+```javascript
+await xky.copy();
+```
+>类似pc上的ctrl+c
+
+#### 剪切 将选定内容剪切到剪贴板
+`xky.cut()`
+
+```javascript
+await xky.cut();
+```
+>类似pc上的ctrl+x
+
+#### 粘贴 剪贴板中的内容粘贴出来
+`xky.paste()`
+
+```javascript
+await xky.paste();
+```
+>类似pc上的ctrl+v
+
 
 #### 查找并点击一个元素
 `xky.findAndClick(name, regex, index)`
