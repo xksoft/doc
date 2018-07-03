@@ -333,4 +333,20 @@ await xky.clearApp('com.tencent.mm');//清空微信所有数据
 ```
 >慎重，这样就相当于重装了这个app了，所有数据都清空哦
 
+#### 调用第三方接口Api
+`xky.callApi(pkname,action,json)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+pkname| string| 第三方app包名或自定义字符串
+action| string| 动作名
+json| json| json格式参数（可选）
+```javascript
+await xky.callApi('com.tencent.mm','sendTextMsg','wxid_sssss','msg');
+```
+```
+{errcode: 0, result: "发送成功"}
+```
+>第三方Api开发请参考对应文档
+
 
