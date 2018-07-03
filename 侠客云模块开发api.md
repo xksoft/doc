@@ -342,7 +342,7 @@ pkname| string| 第三方app包名或自定义字符串
 action| string| 动作名
 json| json| json格式参数（可选）
 ```javascript
-await xky.callApi('com.tencent.mm','sendTextMsg','wxid_sssss','msg');
+await xky.callApi('com.tencent.mm','sendTextMsg',{wxid:'wxid_xxx',msg:'xxxxxx'});
 ```
 ```
 {errcode: 0, result: "发送成功"}
