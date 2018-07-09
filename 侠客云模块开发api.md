@@ -350,11 +350,11 @@ await xky.callApi('com.tencent.mm','sendTextMsg',{wxid:'wxid_xxx',msg:'xxxxxx'})
 >第三方Api开发请参考对应文档
 
 #### 输入文本
-`xky.input(test)`
+`xky.input(text)`
 
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
-test| string| 输入的内容
+text| string| 输入的内容
 ```javascript
 await xky.input('无敌最寂寞'});
 ```
