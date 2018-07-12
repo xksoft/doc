@@ -362,4 +362,27 @@ await xky.input('无敌最寂寞'});
 {errcode: 0, msg: "输入操作完毕"}
 ```
 
+#### 打开输入法选择界面
+`xky.showInputMethod()`
+
+
+```javascript
+await xky.showInputMethod(});
+```
+```
+{errcode: 0}
+```
+
+#### 将输入法设置为侠客云X输入法
+`xky.setInputMethod()`
+
+
+```javascript
+await set.showInputMethod(});
+```
+```
+{errcode: 0}
+```
+
+
 
