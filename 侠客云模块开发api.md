@@ -378,7 +378,7 @@ await xky.showInputMethod(});
 
 
 ```javascript
-await set.showInputMethod(});
+await set.showInputMethod();
 ```
 ```
 {errcode: 0}
