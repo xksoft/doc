@@ -349,7 +349,7 @@ await xky.callApi('com.tencent.mm','sendTextMsg',{wxid:'wxid_xxx',msg:'xxxxxx'})
 ```
 >第三方Api开发请参考对应文档
 
-#### 输入文本
+#### 通过输入法输入文本(能在任意有焦点的地方输入文本)
 `xky.input(text)`
 
 参数 | 值类型 | 说明
