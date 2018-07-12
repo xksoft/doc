@@ -384,5 +384,19 @@ await xky.setInputMethod();
 {errcode: 0}
 ```
 
+#### 弹出客户端提示
+`xky.showNotification(title,message,level)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+title| string| 弹出框的标题
+message| string| 弹出框的内容
+level| string| 弹出框格式 可选 succuss error warning info
+```javascript
+await xky.showNotification('成功','恭喜，快照成功','success');
+```
+```
+{errcode: 0, result: "client_notification发送完毕"}
+```
 
 
