@@ -417,3 +417,16 @@ await await xky.swipe(0.6,0.8,0.6,0.2,10);//模拟抖音翻下一个视频（从
 ```
 >x y均为百分比取值范围是0-1，可配合xiakeuispy工具获取坐标点
 
+#### 设置客户端剪贴板
+`xky.setClientClipboardText(value)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+value| string| 剪贴板内容
+```javascript
+await xky.setClientClipboardText('成功','恭喜，快照成功','success');
+```
+```
+{errcode: 0, result: "发送完毕"}
+```
+
