@@ -424,7 +424,7 @@ await await xky.swipe(0.6,0.8,0.6,0.2,10);//模拟抖音翻下一个视频（从
 ------------ | ------------- | -------------
 value| string| 剪贴板内容
 ```javascript
-await xky.setClientClipboardText('成功','恭喜，快照成功','success');
+await xky.setClientClipboardText('剪贴板内容');
 ```
 ```
 {errcode: 0, result: "发送完毕"}
