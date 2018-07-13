@@ -430,3 +430,18 @@ await xky.setClientClipboardText('剪贴板内容');
 {errcode: 0, result: "发送完毕"}
 ```
 
+#### 从url地址安装apk
+`xky.installApkFromUrl(url,newdown)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+url| string| apk的url地址
+newdown| bool| 可选 默认否 表示是否全新下载（否则如果有缓存文件，则直接用缓存文件安装）
+```javascript
+await xky.installApkFromUrl('http://dldir1.qq.com/weixin/android/weixin667android1320.apk');//安装微信667
+```
+```
+{errcode: 0, result: "apk安装完成"}
+```
+
+
