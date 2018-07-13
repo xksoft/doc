@@ -399,4 +399,21 @@ await xky.showNotification('成功','恭喜，快照成功','success');
 {errcode: 0, result: "client_notification发送完毕"}
 ```
 
+#### 滑动
+`xky.swipe(startx,starty,endx,endy,steps)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+startx| double| 开始x坐标
+starty| double| 开始y坐标
+endx| double| 结束x坐标
+endy| double| 结束y坐标
+steps| int| 步骤数量 可选 （默认10） 这个值是决定这个滑动的速度，越大越慢
+```javascript
+await await xky.swipe(0.6,0.8,0.6,0.2,10);//模拟抖音翻下一个视频（从下往上滑）
+```
+```
+{errcode: 0, result: "client_notification发送完毕"}
+```
+>x y均为百分比取值范围是0-1，可配合xiakeuispy工具获取坐标点
 
