@@ -413,7 +413,7 @@ steps| int| 步骤数量 可选 （默认10） 这个值是决定这个滑动的
 await await xky.swipe(0.6,0.8,0.6,0.2,10);//模拟抖音翻下一个视频（从下往上滑）
 ```
 ```
-{errcode: 0, result: "client_notification发送完毕"}
+{errcode: 0, result: "滑动完成"}
 ```
 >x y均为百分比取值范围是0-1，可配合xiakeuispy工具获取坐标点
 
