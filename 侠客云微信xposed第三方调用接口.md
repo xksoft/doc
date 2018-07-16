@@ -83,9 +83,9 @@ xky.callApi('com.tencent.mm','sendVoice',{wxid:'wxid_k2qvvyeecbhf22',path:'/stor
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
 wxid_xxx| string | 好友微信号
-xcoord| double | 横坐标
-ycoord| double | 纵坐标
-lable| string | 位置名称
+xcoord_xx| double | 横坐标
+ycoord_xx| double | 纵坐标
+lable_xx| string | 位置名称
 
 
 ```javascript
