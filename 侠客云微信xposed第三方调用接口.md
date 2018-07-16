@@ -98,7 +98,7 @@ xky.callApi('com.tencent.mm','sendAddr',{wxid:'wxid_k2qvvyeecbhf22',xcoord:22.83
 
 
 #### 发送名片
-`xky.callApi('com.tencent.mm','sendCard',{wxid:'wxid_xxx',cardid:’card_xxx’});`
+`xky.callApi('com.tencent.mm','sendCard',{wxid:'wxid_xxx',cardid:'card_xxx'});`
 
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
