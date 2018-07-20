@@ -251,7 +251,7 @@ name| string| 查找条件，可以是字符串或者正则表达式
 regex| bool| 可选 默认值 false 是否是正则表达式
 
 ```javascript
-await xky.findUiObjects('微信');//查找文字为 微信 的控件 并点击
+await xky.findUiObjects('微信');//查找文字为 微信 的控件 
 ```
 ```
 {uiObjects: Array(0), errcode: 0}
