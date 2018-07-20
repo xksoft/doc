@@ -444,4 +444,18 @@ await xky.installApkFromUrl('http://dldir1.qq.com/weixin/android/weixin667androi
 {errcode: 0, result: "apk安装完成"}
 ```
 
+#### 发送输入法动作
+`xky.sendEditorAction(code)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+code| int| 动作编号 [输入法动作参考](https://github.com/XKSoft/doc/blob/master/%E5%AE%89%E5%8D%93%E8%BE%93%E5%85%A5%E6%B3%95%E5%8A%A8%E4%BD%9C%E4%BB%A3%E7%A0%81.md)
+```javascript
+await xky.sendEditorAction(4);//发送
+```
+```
+{errcode: 0, msg: "输入法指令输入完毕"}
+```
+
+
 
