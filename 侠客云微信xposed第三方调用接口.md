@@ -116,3 +116,79 @@ xky.callApi('com.tencent.mm','sendCard',{wxid:'wxid_k2qvvyeecbhf22',cardid:'wxid
 ```
 
 
+#### 建立群聊
+`xky.callApi('com.tencent.mm','buildroomchat',{wxids:'wxid_xxx,wxid_xxx',roomname:'roomname_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+wxid_xxx,wxid_xxx| string | 好友微信号,以","分隔
+roomname_xxx| string | 群名称
+
+
+
+```javascript
+xky.callApi('com.tencent.mm','buildroomchat',{wxids:'wxid_k2qvvyeecbhf21,wxid_vq7m1vvo8oo22,wxid_6uq54h678wbs22',roomname:'hello'});
+```
+
+```
+{errcode: 0, result: "调用成功"}
+```
+
+
+#### 直接拉好友进群（群成员>40时，发送群邀请）
+`xky.callApi('com.tencent.mm','pullToRoom',{wxids:'wxid_xxx,wxid_xxx',roomid:'roomid_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+wxid_xxx,wxid_xxx| string | 好友微信号,以","分隔
+roomid_xxx| string | 群ID（需要安装wxapi.apk,再点进群信息界面查看）
+
+
+
+```javascript
+xky.callApi('com.tencent.mm','pullToRoom',{wxids:'wxid_k2qvvyeecbhf21,wxid_vq7m1vvo8oo22,wxid_6uq54h678wbs22',roomid:'12130046225@chatroom'});
+```
+
+```
+{errcode: 0, result: "调用成功"}
+```
+
+#### 发送群邀请
+`xky.callApi('com.tencent.mm','sendRoomInvite',{wxids:'wxid_xxx,wxid_xxx',roomid:'roomid_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+wxid_xxx,wxid_xxx| string | 好友微信号,以","分隔
+roomid_xxx| string | 群ID（需要安装wxapi.apk,再点进群信息界面查看）
+
+
+
+```javascript
+xky.callApi('com.tencent.mm','sendRoomInvite',{wxids:'wxid_k2qvvyeecbhf21,wxid_vq7m1vvo8oo22,wxid_6uq54h678wbs22',roomid:'12130046225@chatroom'});
+```
+
+```
+{errcode: 0, result: "调用成功"}
+```
+
+#### 踢掉群成员
+`xky.callApi('com.tencent.mm','removeRoomMember',{wxids:'wxid_xxx,wxid_xxx',roomid:'roomid_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+wxid_xxx,wxid_xxx| string | 好友微信号（需以wxid_开头）,以","分隔
+roomid_xxx| string | 群ID（需要安装wxapi.apk,再点进群信息界面查看）
+
+
+
+```javascript
+xky.callApi('com.tencent.mm','removeRoomMember',{wxids:'wxid_k2qvvyeecbhf21,wxid_vq7m1vvo8oo22,wxid_6uq54h678wbs22',roomid:'12130046225@chatroom'});
+```
+
+```
+{errcode: 0, result: "调用成功"}
+```
+
+
+
+
