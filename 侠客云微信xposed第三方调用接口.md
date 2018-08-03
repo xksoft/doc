@@ -22,7 +22,7 @@ xky.callApi('com.tencent.mm','sendTextMsg',{wxid:'wxid_k2qvvyeecbhf22',msg:'hell
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "sendTextMsg调用成功"}
 ```
 
 #### 发送图片
@@ -39,7 +39,7 @@ xky.callApi('com.tencent.mm','sendPic',{wxid:'wxid_k2qvvyeecbhf22',path:'/storag
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "sendPic调用成功"}
 ```
 
 #### 发送视频
@@ -56,7 +56,7 @@ xky.callApi('com.tencent.mm','sendVideo',{wxid:'wxid_k2qvvyeecbhf22',path:'/stor
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "sendVideo调用成功"}
 ```
 
 #### 发送语音
@@ -74,7 +74,7 @@ xky.callApi('com.tencent.mm','sendVoice',{wxid:'wxid_k2qvvyeecbhf22',path:'/stor
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "sendVoice调用成功"}
 ```
 
 #### 发送位置信息
@@ -93,7 +93,7 @@ xky.callApi('com.tencent.mm','sendAddr',{wxid:'wxid_k2qvvyeecbhf22',xcoord:22.83
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "sendAddr调用成功"}
 ```
 
 
@@ -112,7 +112,7 @@ xky.callApi('com.tencent.mm','sendCard',{wxid:'wxid_k2qvvyeecbhf22',cardid:'wxid
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "sendCard调用成功"}
 ```
 
 
@@ -131,7 +131,7 @@ xky.callApi('com.tencent.mm','buildroomchat',{wxids:'wxid_k2qvvyeecbhf21,wxid_vq
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "buildroomchat调用成功roomId :4868493411@chatroom"}
 ```
 
 
@@ -150,7 +150,7 @@ xky.callApi('com.tencent.mm','pullToRoom',{wxids:'wxid_k2qvvyeecbhf21,wxid_vq7m1
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "pullToRoom调用成功"}
 ```
 
 #### 发送群邀请
@@ -168,7 +168,7 @@ xky.callApi('com.tencent.mm','sendRoomInvite',{wxids:'wxid_k2qvvyeecbhf21,wxid_v
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "sendRoomInvite调用成功"}
 ```
 
 #### 踢掉群成员
@@ -186,8 +186,51 @@ xky.callApi('com.tencent.mm','removeRoomMember',{wxids:'wxid_k2qvvyeecbhf21,wxid
 ```
 
 ```
-{errcode: 0, result: "调用成功"}
+{errcode: 0, result: "removeRoomMember调用成功"}
 ```
+
+#### 获取所有好友wxid
+`xky.callApi('com.tencent.mm','getAllcontactsWxid');`
+
+
+```javascript
+xky.callApi('com.tencent.mm','getAllcontactsWxid');
+```
+
+```
+{errcode: 0, result: "getAllcontactsWxid调用成功", wxids: "[wxid_6uq54h678wbs22, wxid_vq7m1vvo8oo22, wxid_k2qvvyeecbhf21]"}
+```
+
+#### 获取某群成员wxid
+`xky.callApi('com.tencent.mm','getRoomMembersWxid',{roomid:'roomid_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+roomid_xxx| string | 群ID（需要安装wxapi.apk,再点进群信息界面查看）
+
+
+
+```javascript
+xky.callApi('com.tencent.mm','getRoomMembersWxid',{roomid:'51014915912@chatroom'});
+```
+
+```
+{errcode: 0, result: "getRoomMembersWxid调用成功", wxids: "[wxid_k2qvvyeecbhf21, wxid_6uq54h678wbs22, wxid_vq7m1vvo8oo22]"}
+```
+
+#### 获取所有群所有群成员wxid
+`xky.callApi('com.tencent.mm','getAllRoomMembersWxid');`
+
+
+```javascript
+xky.callApi('com.tencent.mm','getAllRoomMembersWxid');
+```
+
+```
+{errcode: 0, result: "getAllRoomMembersWxid调用成功", wxids: "[wxid_k2qvvyeecbhf21;wxid_6uq54h678wbs22;wxid_vq7m…yeecbhf21;wxid_6uq54h678wbs22;wxid_vq7m1vvo8oo22]"}
+```
+
+
 
 
 
