@@ -230,6 +230,23 @@ xky.callApi('com.tencent.mm','getAllRoomMembersWxid');
 {errcode: 0, result: "getAllRoomMembersWxid调用成功", wxids: "[wxid_k2qvvyeecbhf21;wxid_6uq54h678wbs22;wxid_vq7m…yeecbhf21;wxid_6uq54h678wbs22;wxid_vq7m1vvo8oo22]"}
 ```
 
+#### 查询微信数据库
+`xky.callApi('com.tencent.mm','runSql',{sql:'sql_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+sql_xxx| string | SQL SELECT 语句
+
+
+
+```javascript
+xky.callApi('com.tencent.mm','runSql',{sql:'select username,nickname from rcontact where type = 4 '});
+```
+
+```
+{errcode: 0, result: "runSql调用成功", details: Array(69)}
+```
+
 
 
 
