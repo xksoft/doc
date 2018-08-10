@@ -116,6 +116,33 @@ xky.callApi('com.tencent.mm','sendCard',{wxid:'wxid_k2qvvyeecbhf22',cardid:'wxid
 ```
 
 
+#### 发送分享链接
+`xky.callApi('com.tencent.mm','sendShareLinks',{wxid:'wxid_xxx',url:'url_xxx',appId:'appId_xx',appName:'appNa_xx',title:'title_xx',description:'des_xx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+wxid_xxx| string | 好友微信号
+url_xxx| string | 分享链接的url
+appId_xx| string | 手机应用appid
+appNa_xx| string | 手机应用名称
+title_xx| string | 分享链接标题头
+des_xx| string | 分享链接描述
+
+
+
+
+```javascript
+xky.callApi('com.tencent.mm','sendShareLinks',{wxid:'wxid_k2qvvyeecbhf21',
+                                                url:'https://www.shouyu.com/course.html?curriculaThemeId=ct-7e5ca4fd-8c4b-4bc6-ad16-23cf0c6b9017',
+                                                appId:'wx0f73cdef9a0b09b0',appName:'授渔',
+                                                title:'短视频自媒体实战运营速成到精通',description:'快来报名参加吧'});
+```
+
+```
+{errcode: 0, result: "sendShareLinks调用成功"}
+```
+
+
 #### 建立群聊
 `xky.callApi('com.tencent.mm','buildroomchat',{wxids:'wxid_xxx,wxid_xxx',roomname:'roomname_xxx'});`
 
