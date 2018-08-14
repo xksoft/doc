@@ -77,6 +77,23 @@ xky.callApi('com.tencent.mm','sendVoice',{wxid:'wxid_k2qvvyeecbhf22',path:'/stor
 {errcode: 0, result: "sendVoice调用成功"}
 ```
 
+#### 发送文件
+`xky.callApi('com.tencent.mm','sendFile',{wxid:'wxid_xxx',path:'path_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+wxid_xxx| string | 好友微信号
+path_xxx| string | 文件路径
+
+
+```javascript
+xky.callApi('com.tencent.mm','sendFile',{wxid:'wxid_k2qvvyeecbhf22',path:'/sdcard/temp/temp/1'});
+```
+
+```
+{errcode: 0, result: "sendFile调用成功"}
+```
+
 #### 发送位置信息
 `xky.callApi('com.tencent.mm','sendAddr',{wxid:'wxid_xxx',xcoord:xcoord_xx,ycoord:ycoord_xx,lable:'lable_xx'});`
 
