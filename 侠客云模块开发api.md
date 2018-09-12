@@ -511,3 +511,112 @@ await xky.findAndInputAndWait('com.android.messaging:id/recipient_text_view',100
 ```
 >控件元素id可配合xiakeyunuispy工具获取
 
+
+#### 创建一个全息硬件信息 【仅侠客云矿机可用】
+`xky.createHardware(model)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+model| string| 可选条件，值为需要指定的机型，例如 mi5 nexus6等（具体参考支持列表);
+```javascript
+await xky.createHardware('nexus6');//生成一个nexus6的硬件全息信息
+```
+```
+{errcode: 0, model: "Nexus 6", key: "c009047c"}
+```
+>返回值 key 请自行记录，这个表示当前全息信息的唯一值（不变）
+
+#### 还原一个全息硬件信息 【仅侠客云矿机可用】
+`xky.restoreHardware(key)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+key| string| 这个key为createHardware方法返回的key
+```javascript
+await xky.restoreHardware('c009047c');//还原key=c009047c的硬件全息信息
+```
+```
+{errcode: 0, model: "Nexus 6", key: "c009047c"}
+```
+>返回值 key 请自行记录，这个表示当前全息信息的唯一值（不变）
+
+#### 获取当前设备的硬件全息KEY 【仅侠客云矿机可用】
+`xky.getHardwareKey()`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+key| string| 这个key为createHardware方法返回的key
+```javascript
+await xky.getHardwareKey();
+```
+```
+{errcode: 0, key: "c009047c"}
+```
+>返回值 key 请自行记录，这个表示当前全息信息的唯一值（不变）
+
+#### 备份一个APP的全息快照 【仅侠客云矿机可用】
+`xky.backupApp(packName,backupFiles,removeFiles)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+packName| string| app包名
+backupFiles| string[]| 可选，这里可以指定备份的文件或目录，不写则全部
+removeFiles| string[]| 可选，这里可以指定剔除的文件或目录，不写则不剔除任何文件
+```javascript
+await xky.backupApp(
+    "com.tencent.mm",
+    ["MicroMsg", "shared_prefs"],
+    ["avatar", "appbrand"]
+  );
+```
+```
+{errcode: 0, path: "/sdcard/xbak/19fc.tar", name: "19fc"}
+```
+>返回值 path 为备份路径 name 为备份名
+
+#### 还原一个APP的全息快照 【仅侠客云矿机可用】
+`xky.restoreApp(packName,backupName)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+packName| string| app包名
+backupName| string| 备份名（即backupApp方法返回值里的name)
+```javascript
+await xky.restoreApp("com.tencent.mm", "19fc");
+```
+```
+{errcode: 0, msg: "app包还原完毕"}
+```
+>返回值 path 为备份路径 name 为备份名
+
+#### 上传一个文件到云端网盘
+`xky.uploadFile(filepath,savepath)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+filepath| string| 文件在手机上的路径
+savepath| string| 文件在网盘里的路径
+```javascript
+await xky.uploadFile("/sdcard/xbak/6406.tar", "wedata/6406.tar");
+```
+```
+{errcode: 0, name: "files/anj68vkk9tqmmxb38myg/wedata/6406.tar", url: "https://static.xky.com/files/anj68vkk9tqmmxb38myg/wedata/6406.tar"}
+```
+>返回值 name 网盘路径 url 下载地址
+
+#### 从侠客云端网盘下载一个文件
+`xky.downloadFile(filepath,savepath)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+filepath| string| 网盘上的路径
+savepath| string| 手机上的路径
+```javascript
+await xky.downloadFile("wedata/6406.tar", "/sdcard/xbak/6406.tar");
+```
+```
+{errcode: 0, name: "/sdcard/xbak/6406.tar"}
+```
+>返回值 name 保存路径
+
+
