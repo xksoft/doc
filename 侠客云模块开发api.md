@@ -94,6 +94,17 @@ await xky.log('我是日志');
 {errcode: 0, msg: "日志发送完毕"}
 ```
 
+
+#### 唤醒机器
+`xky.wakeup()`
+
+```javascript
+await xky.wakeup();
+```
+```
+{errcode: 0, msg: "done"}
+```
+
 #### 点击某个位置
 `xky.click(x,y)`
 
