@@ -291,6 +291,42 @@ xky.callApi('com.tencent.mm','runSql',{sql:'select username,nickname from rconta
 {errcode: 0, result: "runSql调用成功", details: Array(69)}
 ```
 
+#### 发送朋友圈（文字、图片、短视频）
+`xky.callApi("com.tencent.mm","sendMoments",{"des":"txt_xx","picpaths":"picpaths_xx","KSightPath":"ksightpath_xx","KSightThumbPath":"ksightThpath_xx"});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+txt_xx| string | 朋友圈文字描述，可为空（""）
+picpaths| string | 朋友圈图片路径，最多为9张图片，用","分隔,可为空（""）
+KSightPath| string | 短视频路径，可为空（""）
+KSightThumbPath| string | 短视频封面路径,可为空（""）,为空时默认为短视频第一帧图片
+
+
+
+```javascript
+xky.callApi("com.tencent.mm","sendMoments",{"des":"大家好","picpaths":"","KSightPath":"","KSightThumbPath":""});
+```
+
+```
+{errcode: 0, result: "sendMoments调用成功"}
+```
+
+```javascript
+xky.callApi("com.tencent.mm","sendMoments",{"des":"大家好","picpaths":"/storage/emulated/0/DCIM/1528426443248.jpg,/storage/emulated/0/6443248.jpg","KSightPath":"","KSightThumbPath":""});
+```
+
+```
+{errcode: 0, result: "sendMoments调用成功"}
+```
+
+```javascript
+xky.callApi("com.tencent.mm","sendMoments",{"des":"大家好","picpaths":"","KSightPath":"/sdcard/tencent/MicroMsg/WeiXin/wx_camera_1531102334784.mp4","KSightThumbPath":""});
+```
+
+```
+{errcode: 0, result: "sendMoments调用成功"}
+```
+
 
 
 
