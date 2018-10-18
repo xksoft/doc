@@ -327,6 +327,23 @@ xky.callApi("com.tencent.mm","sendMoments",{"des":"大家好","picpaths":"","KSi
 {errcode: 0, result: "sendMoments调用成功"}
 ```
 
+#### 改变微信定位
+`xky.callApi('com.tencent.mm','changlocation',{loctoX:X_xxx,loctoY:Y_xxx});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+loctoX| double | 改变定位的x坐标
+loctoX| double | 改变定位的y坐标
+
+
+```javascript
+xky.callApi('com.tencent.mm','changlocation',{loctoX:31.245682,loctoY:121.522522});
+```
+
+```
+{errcode: 0, result: "changlocation调用成功"}
+```
+
 
 
 
