@@ -630,4 +630,51 @@ await xky.downloadFile("wedata/6406.tar", "/sdcard/xbak/6406.tar");
 ```
 >返回值 name 保存路径
 
+#### 锁屏
+`xky.lockScreen()`
+
+```javascript
+await xky.lockScreen();
+```
+```
+{errcode: 0, msg: "锁屏完成"}
+```
+
+#### 读取联系人
+`xky.getContacts()`
+
+
+```javascript
+await xky.getContacts();
+```
+```
+{errcode: 0, msg: "获取到1个联系人", contracts: Array(1)}
+```
+
+#### 添加联系人
+`xky.insertContracts(contracts)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+contracts| JSON数组| 要添加的联系人列表，格式是json数组
+```javascript
+await xky.insertContracts([
+    { name: "aaa", number: "17877777777" },
+    { name: "bbb", number: "18888888888" }
+  ]);
+```
+```
+{done: 2, errcode: 0, msg: "成功添加2个联系人"}
+```
+
+#### 清空所有联系人
+`xky.clearContracts()`
+
+
+```javascript
+await xky.clearContracts();
+```
+```
+{errcode: 0, msg: "清空联系人完毕"}
+```
 
