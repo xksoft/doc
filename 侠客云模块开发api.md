@@ -678,14 +678,14 @@ await xky.clearContacts();
 {errcode: 0, msg: "清空联系人完毕"}
 ```
 
-#### 添加图片到系统图库
-`xky.insertImage(path)`
+#### 添加媒体文件到系统图库
+`xky.insertMedia(path)`
 
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
-path| string| 图片、视频在手机上的路径
+path| string| 图片、视频在手机上的路径，仅限jpg和mp4
 ```javascript
-  let aaa = await xky.insertImage("/sdcard/aaa.jpg");
+  let aaa = await xky.insertMedia("/sdcard/aaa.jpg");
 ```
 ```
 {errcode: 0, msg: "刷新相册完成"}
