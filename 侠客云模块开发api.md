@@ -652,13 +652,13 @@ await xky.getContacts();
 ```
 
 #### 添加联系人
-`xky.insertContracts(contracts)`
+`xky.insertContacts(contracts)`
 
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
 contracts| JSON数组| 要添加的联系人列表，格式是json数组
 ```javascript
-await xky.insertContracts([
+await xky.insertContacts([
     { name: "aaa", number: "17877777777" },
     { name: "bbb", number: "18888888888" }
   ]);
@@ -668,13 +668,26 @@ await xky.insertContracts([
 ```
 
 #### 清空所有联系人
-`xky.clearContracts()`
+`xky.clearContacts()`
 
 
 ```javascript
-await xky.clearContracts();
+await xky.clearContacts();
 ```
 ```
 {errcode: 0, msg: "清空联系人完毕"}
+```
+
+#### 添加图片到系统图库
+`xky.insertImage(path)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+path| string| 图片、视频在手机上的路径
+```javascript
+  let aaa = await xky.insertImage("/sdcard/aaa.jpg");
+```
+```
+{errcode: 0, msg: "刷新相册完成"}
 ```
 
