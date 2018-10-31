@@ -474,7 +474,7 @@ await xky.sendEditorAction(4);//发送
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
 name| string| 查找条件，可以是字符串或者正则表达式
-num|int|等待时间 10=1秒
+num|int|等待时间 秒
 regex| bool| 可选 默认值 false 是否是正则表达式
 
 ```javascript
@@ -491,13 +491,13 @@ await xky.findUiObjects('微信',10);//查找文字为 微信 的控件   等待
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
 name| string| 查找条件，可以是字符串或者正则表达式
-num|int|等待时间 10=1秒
+num|int|等待时间 秒
 regex| bool| 可选 默认值 false 是否是正则表达式
 index| int | 可选 默认值0 点击找到的第几个元素
 ```javascript
-await xky.findAndClickAndWait('微信',100);//查找文字为 微信 的控件 并点击 等待10秒
-await xky.findAndClickAndWait('微',100,true);//正则方式查找，这里是所有包含 微 的控件 并点击 等待10秒
-await xky.findAndClickAndWait('微信',100,false,1);//查找文字为 微信 的控件 并点击，并点击第2个控件（计算机数数从0开始） 等待10秒
+await xky.findAndClickAndWait('微信',10);//查找文字为 微信 的控件 并点击 等待10秒
+await xky.findAndClickAndWait('微',10,true);//正则方式查找，这里是所有包含 微 的控件 并点击 等待10秒
+await xky.findAndClickAndWait('微信',10,false,1);//查找文字为 微信 的控件 并点击，并点击第2个控件（计算机数数从0开始） 等待10秒
 ```
 ```
 {msg: "点击成功", errcode: 0}
@@ -510,12 +510,12 @@ await xky.findAndClickAndWait('微信',100,false,1);//查找文字为 微信 的
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
 name| string| 查找条件，可以是字符串或者正则表达式
-num|int|等待时间 10=1秒
+num|int|等待时间 秒
 value| string| 要输入的内容
 regex| bool| 可选 默认值 false 是否是正则表达式
 index| int | 可选 默认值0 点击找到的第几个元素
 ```javascript
-await xky.findAndInputAndWait('com.android.messaging:id/recipient_text_view',100,'hahaha');//查找控件并输入 hahahah 等待10秒
+await xky.findAndInputAndWait('com.android.messaging:id/recipient_text_view',10,'hahaha');//查找控件并输入 hahahah 等待10秒
 ```
 ```
 {msg: "赋值成功", errcode: 0}
