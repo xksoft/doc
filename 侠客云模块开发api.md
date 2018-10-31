@@ -474,7 +474,7 @@ await xky.sendEditorAction(4);//发送
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
 name| string| 查找条件，可以是字符串或者正则表达式
-num|int|等待时间 10=1秒
+num|int|等待时间 秒
 regex| bool| 可选 默认值 false 是否是正则表达式
 
 ```javascript
@@ -491,13 +491,13 @@ await xky.findUiObjects('微信',10);//查找文字为 微信 的控件   等待
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
 name| string| 查找条件，可以是字符串或者正则表达式
-num|int|等待时间 10=1秒
+num|int|等待时间 秒
 regex| bool| 可选 默认值 false 是否是正则表达式
 index| int | 可选 默认值0 点击找到的第几个元素
 ```javascript
-await xky.findAndClickAndWait('微信',100);//查找文字为 微信 的控件 并点击 等待10秒
-await xky.findAndClickAndWait('微',100,true);//正则方式查找，这里是所有包含 微 的控件 并点击 等待10秒
-await xky.findAndClickAndWait('微信',100,false,1);//查找文字为 微信 的控件 并点击，并点击第2个控件（计算机数数从0开始） 等待10秒
+await xky.findAndClickAndWait('微信',10);//查找文字为 微信 的控件 并点击 等待10秒
+await xky.findAndClickAndWait('微',10,true);//正则方式查找，这里是所有包含 微 的控件 并点击 等待10秒
+await xky.findAndClickAndWait('微信',10,false,1);//查找文字为 微信 的控件 并点击，并点击第2个控件（计算机数数从0开始） 等待10秒
 ```
 ```
 {msg: "点击成功", errcode: 0}
@@ -510,12 +510,12 @@ await xky.findAndClickAndWait('微信',100,false,1);//查找文字为 微信 的
 参数 | 值类型 | 说明
 ------------ | ------------- | -------------
 name| string| 查找条件，可以是字符串或者正则表达式
-num|int|等待时间 10=1秒
+num|int|等待时间 秒
 value| string| 要输入的内容
 regex| bool| 可选 默认值 false 是否是正则表达式
 index| int | 可选 默认值0 点击找到的第几个元素
 ```javascript
-await xky.findAndInputAndWait('com.android.messaging:id/recipient_text_view',100,'hahaha');//查找控件并输入 hahahah 等待10秒
+await xky.findAndInputAndWait('com.android.messaging:id/recipient_text_view',10,'hahaha');//查找控件并输入 hahahah 等待10秒
 ```
 ```
 {msg: "赋值成功", errcode: 0}
@@ -630,4 +630,64 @@ await xky.downloadFile("wedata/6406.tar", "/sdcard/xbak/6406.tar");
 ```
 >返回值 name 保存路径
 
+#### 锁屏
+`xky.lockScreen()`
+
+```javascript
+await xky.lockScreen();
+```
+```
+{errcode: 0, msg: "锁屏完成"}
+```
+
+#### 读取联系人
+`xky.getContacts()`
+
+
+```javascript
+await xky.getContacts();
+```
+```
+{errcode: 0, msg: "获取到1个联系人", contracts: Array(1)}
+```
+
+#### 添加联系人
+`xky.insertContacts(contracts)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+contracts| JSON数组| 要添加的联系人列表，格式是json数组
+```javascript
+await xky.insertContacts([
+    { name: "aaa", number: "17877777777" },
+    { name: "bbb", number: "18888888888" }
+  ]);
+```
+```
+{done: 2, errcode: 0, msg: "成功添加2个联系人"}
+```
+
+#### 清空所有联系人
+`xky.clearContacts()`
+
+
+```javascript
+await xky.clearContacts();
+```
+```
+{errcode: 0, msg: "清空联系人完毕"}
+```
+
+#### 添加媒体文件到系统图库
+`xky.insertMedia(path)`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+path| string| 图片、视频在手机上的路径，仅限jpg和mp4
+```javascript
+  let aaa = await xky.insertMedia("/sdcard/aaa.jpg");
+```
+```
+{errcode: 0, msg: "刷新相册完成"}
+```
 
