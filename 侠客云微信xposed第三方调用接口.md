@@ -344,6 +344,18 @@ xky.callApi('com.tencent.mm','changlocation',{loctoX:31.245682,loctoY:121.522522
 {errcode: 0, result: "changlocation调用成功"}
 ```
 
+#### 获取登录用户信息（account,wxid,name...）
+`xky.callApi('com.tencent.mm','getMyinfo');`
+
+
+```javascript
+xky.callApi('com.tencent.mm','getMyinfo');
+```
+
+```
+{errcode: 0, result: "getMyinfo调用成功", details: {…}}
+```
+
 
 
 
