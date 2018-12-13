@@ -245,6 +245,19 @@ xky.callApi('com.tencent.mm','getAllcontactsWxid');
 {errcode: 0, result: "getAllcontactsWxid调用成功", wxids: "[wxid_6uq54h678wbs22, wxid_vq7m1vvo8oo22, wxid_k2qvvyeecbhf21]"}
 ```
 
+
+#### 获取所有好友微信号
+`xky.callApi('com.tencent.mm','getAllcontactsalias');`
+
+
+```javascript
+xky.callApi('com.tencent.mm','getAllcontactsalias');
+```
+
+```
+{errcode: 0, result: "getAllcontactsalias调用成功", alias: "["wxid_7cmde6vkbgrl22","rsdayu","wxid_mmgkwjlolwyt…pnnw822","wxid_k2qvvyeecbhf21","jinbw8085854192"]"}
+```
+
 #### 获取某群成员wxid
 `xky.callApi('com.tencent.mm','getRoomMembersWxid',{roomid:'roomid_xxx'});`
 
@@ -262,6 +275,18 @@ xky.callApi('com.tencent.mm','getRoomMembersWxid',{roomid:'51014915912@chatroom'
 {errcode: 0, result: "getRoomMembersWxid调用成功", wxids: "[wxid_k2qvvyeecbhf21, wxid_6uq54h678wbs22, wxid_vq7m1vvo8oo22]"}
 ```
 
+#### 获取所有群id
+`xky.callApi('com.tencent.mm','getAllRoomids');`
+
+
+```javascript
+xky.callApi('com.tencent.mm','getAllRoomids');
+```
+
+```
+{errcode: 0, result: "getAllRoomids调用成功", roomids: "["10592148314@chatroom","4645643461@chatroom","6802458544@chatroom","9869997871@chatroom"]"}
+```
+
 #### 获取所有群所有群成员wxid
 `xky.callApi('com.tencent.mm','getAllRoomMembersWxid');`
 
@@ -273,6 +298,44 @@ xky.callApi('com.tencent.mm','getAllRoomMembersWxid');
 ```
 {errcode: 0, result: "getAllRoomMembersWxid调用成功", wxids: "[wxid_k2qvvyeecbhf21;wxid_6uq54h678wbs22;wxid_vq7m…yeecbhf21;wxid_6uq54h678wbs22;wxid_vq7m1vvo8oo22]"}
 ```
+
+
+#### 根据roomid 打开群详情界面
+`xky.callApi('com.tencent.mm','openRoomByRoomid',{roomid:'roomid_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+roomid_xxx| string | roomid
+
+
+
+```javascript
+xky.callApi('com.tencent.mm','openRoomByRoomid',{roomid:"6802458544@chatroom"});
+```
+
+```
+{errcode: 0, result: "openRoomByRoomid调用成功"}
+```
+
+
+#### 根据群邀请链接content 打开群邀请界面
+`xky.callApi('com.tencent.mm','openInvitedByxmlcontent',{content:'content_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+content_xxx| string | 群邀请链接content(群邀请在微信数据库的存储content字段)
+
+
+
+```javascript
+xky.callApi('com.tencent.mm','openInvitedByxmlcontent',{content:"<msg><appmsg appid=\"\" sdkver=\"\"><title><![CDATA[邀请你加入群聊]]>....</msg>"});
+```
+
+```
+{errcode: 0, result: "openInvitedByxmlcontent调用成功"}
+```
+
+
 
 #### 查询微信数据库
 `xky.callApi('com.tencent.mm','runSql',{sql:'sql_xxx'});`
