@@ -300,6 +300,24 @@ xky.callApi('com.tencent.mm','getAllRoomMembersWxid');
 ```
 
 
+#### 根据wxid 打开个人详情界面
+`xky.callApi('com.tencent.mm','openPersonDesbywxid',{wxid:'wxid_xxx'});`
+
+参数 | 值类型 | 说明
+------------ | ------------- | -------------
+wxid_xxx| string | wxid好友微信号
+
+
+
+```javascript
+xky.callApi("com.tencent.mm", "openPersonDesbywxid", {wxid:"wxid_k2qvvyeecbhf21"});
+```
+
+```
+{errcode: 0, result: "openPersonDesbywxid调用成功"}
+```
+
+
 #### 根据roomid 打开群详情界面
 `xky.callApi('com.tencent.mm','openRoomByRoomid',{roomid:'roomid_xxx'});`
 
